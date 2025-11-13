@@ -87,17 +87,10 @@
       height:22px; width:auto; object-fit:contain; opacity:.9;
     }
     
-    .ifp-title{
-      font-weight:700;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    
     /* Mobile tinh gọn chữ và khoảng cách */
     @media (max-width:480px){
       .invite-footer-pro{ gap:10px; padding:9px 12px; border-radius:10px; }
       .ifp-logo{ height:20px; }
-      .ifp-title{ font-size:.92rem; }
       .ifp-social img{ width:20px; height:20px; }
     }
 /* ===== Card chính ===== */

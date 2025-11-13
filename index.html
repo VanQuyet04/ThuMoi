@@ -1,245 +1,312 @@
 <link rel="stylesheet" href="https://thiep.kyyeutnt.vn/public/datum/assets/css/backend.css?v=1.0.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..."
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;700&display=swap"
+    rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=1.0">
 <style>
-.share-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.copy-btn{padding:8px 12px;border:1px solid #e3e3e3;border-radius:8px;background:#fff;cursor:pointer}
-.invite-card .invite-name{word-break:break-word}
+    .share-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center
+    }
+
+    .copy-btn {
+        padding: 8px 12px;
+        border: 1px solid #e3e3e3;
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer
+    }
+
+    .invite-card .invite-name {
+        word-break: break-word
+    }
 </style>
 <!doctype html>
 <html lang="vi">
+
 <head>
-  <meta charset="utf-8">
-  <title>Nguyễn Trần Ngọc Anh – 12A10, THPT Nguyễn Trãi | TNT MEDIA - Tạo thiệp mời kỷ yếu</title>
-  <meta name="description" content="Trân trọng mời bạn iu đến tham dự lễ chụp tốt nghiệp của mình!">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Nguyễn Trần Ngọc Anh – 12A10, THPT Nguyễn Trãi | TNT MEDIA - Tạo thiệp mời kỷ yếu</title>
+    <meta name="description" content="Trân trọng mời bạn iu đến tham dự lễ chụp tốt nghiệp của mình!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Open Graph để share đẹp -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Nguyễn Trần Ngọc Anh – 12A10, THPT Nguyễn Trãi">
-  <meta property="og:description" content="Trân trọng mời bạn iu đến tham dự lễ chụp tốt nghiệp của mình!">
-  <meta property="og:image" content="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183935_0cc2430d.jpg">  <meta property="og:url" content="https://thiep.kyyeutnt.vn/xem-thiep/254">
+    <!-- Open Graph để share đẹp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nguyễn Trần Ngọc Anh – 12A10, THPT Nguyễn Trãi">
+    <meta property="og:description" content="Trân trọng mời bạn iu đến tham dự lễ chụp tốt nghiệp của mình!">
+    <meta property="og:image" content="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183935_0cc2430d.jpg">
+    <meta property="og:url" content="https://thiep.kyyeutnt.vn/xem-thiep/254">
 </head>
+
 <body>
-<style>
-#invite-content {
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
+    <style>
+        #invite-content {
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
 
-.door-wrap {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 9999;
-  display: flex;
-  overflow: hidden;
-}
+        .door-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            overflow: hidden;
+        }
 
-.door-door {
-  width: 50%;
-  height: 100%;
-  transition: transform 1.8s ease-in-out;
-}
+        .door-door {
+            width: 50%;
+            height: 100%;
+            transition: transform 1.8s ease-in-out;
+        }
 
-.door-wrap.open .left {
-  transform: translateX(-100%);
-}
+        .door-wrap.open .left {
+            transform: translateX(-100%);
+        }
 
-.door-wrap.open .right {
-  transform: translateX(100%);
-}
+        .door-wrap.open .right {
+            transform: translateX(100%);
+        }
 
-.door-wrap.open + #invite-content {
-  opacity: 1;
-}
+        .door-wrap.open+#invite-content {
+            opacity: 1;
+        }
+    </style>
 
-</style>
-           
-<div class="door-wrap">
-    <img src="/uploads/icon/trai.jpg" class="door-door left" alt="">
-    <img src="/uploads/icon/phai.jpg" class="door-door right" alt="">
-</div>
-
-<div id="invite-content" class="invite-content">
-    <div class="row">
-      <div class="col-lg-12"style="padding: 0px;">
-          
-        <div class="card mb-3 hover-shadow-sm" style="border: none;">
-            
-          <div class="card-body text-center invite-card">
-            
-            <h3 class="invite-title">Thiệp mời chụp ảnh</h3>
-            <h2 class="invite-subtitle">Tốt nghiệp</h2>
-
-            <br/>
-            <div class="invite-avatar">
-              <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183935_0cc2430d.jpg" alt="avatar" class="avatar" loading="lazy">
-              <img src="/uploads/icon/icon-mu-tot-nghiep.png" alt="" class="icon-grad-hat" loading="lazy">
-            </div>
-
-            <div class="invite-of">
-              <img class="arrow" src="/uploads/icon/mui-ten.png" alt="" loading="lazy">
-              <span class="label">của</span>
-            </div>
-
-            <h3 class="invite-name">Nguyễn Trần Ngọc Anh</h3>
-            <p class="invite-badge">12A10, THPT Nguyễn Trãi</p>
-
-            <div class="invite-section invite-quote">
-              <img src="/uploads/icon/mu.png" alt="" class="pin-left" loading="lazy">
-              <div class="center">“Trân trọng mời bạn iu đến tham dự lễ chụp tốt nghiệp của mình!”</div>
-            </div>
-
-            <br/><br/>
-            <h3 class="section-script invite-title">Thông tin</h3>
-            <h2 class="section-sub">
-              Thời gian & địa điểm              <img src="/uploads/icon/mu4.png" alt="" class="mu4" loading="lazy">
-            </h2>
-            <div class="invite-info">
-              <div class="invite-image">
-                <div class="img-frame"><img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183935_0cc2430d.jpg" alt="image" loading="lazy"></div>
-                <img class="cap" src="/uploads/icon/mu3.png" alt="" loading="lazy">
-              </div>
-            
-              <div class="about-text">
-                <p>Xin chàoo! Mong mọi người tới dự lễ tốt nghiệp của mình thật vui vẻe</p>              </div>
-            </div>
-            <div class="mt-2">
-              <p><b>🕒 Thời gian:</b> Chủ Nhật, ngày 07/12/2025</p>
-
-              <div class="calendar-box">
-                <div class="calendar-header">
-                  <select disabled><option>Tháng 12</option></select>
-                  <select disabled><option>2025</option></select>
-                </div>
-                <div class="calendar-grid">
-                  <div class="weekday">T2</div><div class="weekday">T3</div><div class="weekday">T4</div>
-                  <div class="weekday">T5</div><div class="weekday">T6</div><div class="weekday">T7</div><div class="weekday">CN</div>
-                  <div class=''>1</div><div class=''>2</div><div class=''>3</div><div class=''>4</div><div class=''>5</div><div class=''>6</div><div class='active-day'>7</div><div class=''>8</div><div class=''>9</div><div class=''>10</div><div class=''>11</div><div class=''>12</div><div class=''>13</div><div class=''>14</div><div class=''>15</div><div class=''>16</div><div class=''>17</div><div class=''>18</div><div class=''>19</div><div class=''>20</div><div class=''>21</div><div class=''>22</div><div class=''>23</div><div class=''>24</div><div class=''>25</div><div class=''>26</div><div class=''>27</div><div class=''>28</div><div class=''>29</div><div class=''>30</div><div class=''>31</div>                </div>
-              </div>
-
-              <p><b>▶ Địa chỉ:</b> Sân trường THPT Nguyễn Trãi</p>
-              <a href="https://www.google.com/maps/search/S%C3%A2n+tr%C6%B0%E1%BB%9Dng+THPT+Nguy%E1%BB%85n+Tr%C3%A3i" target="_blank" class="invite-button" rel="noopener">XEM CHỈ ĐƯỜNG</a>
-            </div>
-
-             <div class="mt-2">
-              <div class="contact-info mt-3">
-                                  <p><b>Hotline:</b> <a href="tel:0342240508">0342240508</a></p>
-                            
-                                  <p><b>Facebook:</b>
-                                          <a href="https://www.facebook.com/share/16syjLmXSq/?mibextid=wwXIfr" target="_blank" rel="noopener">Chugg Ngoc Anhh</a>
-                                      </p>
-                              </div>
-            </div>
-            
-            <h3 class="section-script mt-40 invite-title">Một số ảnh về</h3>
-            <h2 class="section-sub">Quá trình học tập</h2>
-
-                          <div class="gallery">
-                <div class="gallery-main">
-                  <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_184538_e6c4b0e2.jpg" alt="" loading="lazy">
-                </div>
-                <div class="gallery-row">
-                  <div class="gallery-side-large">
-                    <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183936_26c6f9f8.jpg" alt="" loading="lazy">
-                  </div>
-                  <div class="gallery-col">
-                    <div class="gallery-thumb">
-                      <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183936_7aed52b4.jpg" alt="" loading="lazy">
-                    </div>
-                    <div class="gallery-thumb">
-                      <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183936_f8484ff7.jpg" alt="" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-              </div>
-                        
-            <h3 class="section-script mt-40 invite-title">Xác nhận tham dự</h3>
-            <h2 class="section-sub">&amp; lời chúc</h2>
-            
-            <form id="rsvp-form" class="invite-form" accept-charset="UTF-8">
-              <input type="hidden" name="csrf" value="">
-              <input type="hidden" name="invite_id" value="254">
-              <input type="text" name="name" placeholder="Tên của bạn là gì?" required>
-              <input type="text" name="relation" placeholder="Nhập lời chúc của bạn">
-              
-              <select name="join" id="join" required aria-label="Bạn có tham dự không?">
-                <option value="">-- Bạn có tham dự không? --</option>
-                <option value="yes">Có</option>
-                <option value="no">Không</option>
-                <option value="maybe">Có thể</option>
-              </select>
-              <button type="submit">GỬI NGAY!</button>
-              <div class="mt-3 text-start">
-                <div class="msg-head">Xem trước lời chúc của bạn</div>
-                <textarea name="message" rows="4" class="msg-body" 
-                  placeholder="Lời chúc của bạn sẽ hiển thị ở đây" readonly></textarea>
-              </div>
-              <div id="rsvp-alert" class="mt-2" style="display:none"></div>
-            </form>  
-            
-            <div class="center mt-30">
-              <img src="/uploads/icon/thank-you.png" alt="" width="230" loading="lazy"><br/><br/>
-              <div class="invite-footer-pro">
-                <a href="https://www.facebook.com/kyyeutntmedia" target="_blank" rel="noopener" class="ifp-social" aria-label="Facebook TNT">
-                  <img src="/uploads/icon/facebook.png" alt="" loading="lazy">
-                </a>
-                <span class="ifp-title">TNT MEDIA TOP 10 KỶ YẾU TOÀN QUỐC</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
+    <div class="door-wrap">
+        <img src="/uploads/icon/trai.jpg" class="door-door left" alt="">
+        <img src="/uploads/icon/phai.jpg" class="door-door right" alt="">
     </div>
+
+    <div id="invite-content" class="invite-content">
+        <div class="row">
+            <div class="col-lg-12" style="padding: 0px;">
+
+                <div class="card mb-3 hover-shadow-sm" style="border: none;">
+
+                    <div class="card-body text-center invite-card">
+
+                        <h3 class="invite-title">Thiệp mời chụp ảnh</h3>
+                        <h2 class="invite-subtitle">Tốt nghiệp</h2>
+
+                        <br />
+                        <div class="invite-avatar">
+                            <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183935_0cc2430d.jpg"
+                                alt="avatar" class="avatar" loading="lazy">
+                            <img src="/uploads/icon/icon-mu-tot-nghiep.png" alt="" class="icon-grad-hat" loading="lazy">
+                        </div>
+
+                        <div class="invite-of">
+                            <img class="arrow" src="/uploads/icon/mui-ten.png" alt="" loading="lazy">
+                            <span class="label">của</span>
+                        </div>
+
+                        <h3 class="invite-name">Nguyễn Trần Ngọc Anh</h3>
+                        <p class="invite-badge">12A10, THPT Nguyễn Trãi</p>
+
+                        <div class="invite-section invite-quote">
+                            <img src="/uploads/icon/mu.png" alt="" class="pin-left" loading="lazy">
+                            <div class="center">“Trân trọng mời bạn iu đến tham dự lễ chụp tốt nghiệp của mình!”</div>
+                        </div>
+
+                        <br /><br />
+                        <h3 class="section-script invite-title">Thông tin</h3>
+                        <h2 class="section-sub">
+                            Thời gian & địa điểm <img src="/uploads/icon/mu4.png" alt="" class="mu4" loading="lazy">
+                        </h2>
+                        <div class="invite-info">
+                            <div class="invite-image">
+                                <div class="img-frame"><img
+                                        src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183935_0cc2430d.jpg"
+                                        alt="image" loading="lazy"></div>
+                                <img class="cap" src="/uploads/icon/mu3.png" alt="" loading="lazy">
+                            </div>
+
+                            <div class="about-text">
+                                <p>Xin chàoo! Mong mọi người tới dự lễ tốt nghiệp của mình thật vui vẻe</p>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <p><b>🕒 Thời gian:</b> Chủ Nhật, ngày 07/12/2025</p>
+
+                            <div class="calendar-box">
+                                <div class="calendar-header">
+                                    <select disabled>
+                                        <option>Tháng 12</option>
+                                    </select>
+                                    <select disabled>
+                                        <option>2025</option>
+                                    </select>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="weekday">T2</div>
+                                    <div class="weekday">T3</div>
+                                    <div class="weekday">T4</div>
+                                    <div class="weekday">T5</div>
+                                    <div class="weekday">T6</div>
+                                    <div class="weekday">T7</div>
+                                    <div class="weekday">CN</div>
+                                    <div class=''>1</div>
+                                    <div class=''>2</div>
+                                    <div class=''>3</div>
+                                    <div class=''>4</div>
+                                    <div class=''>5</div>
+                                    <div class=''>6</div>
+                                    <div class='active-day'>7</div>
+                                    <div class=''>8</div>
+                                    <div class=''>9</div>
+                                    <div class=''>10</div>
+                                    <div class=''>11</div>
+                                    <div class=''>12</div>
+                                    <div class=''>13</div>
+                                    <div class=''>14</div>
+                                    <div class=''>15</div>
+                                    <div class=''>16</div>
+                                    <div class=''>17</div>
+                                    <div class=''>18</div>
+                                    <div class=''>19</div>
+                                    <div class=''>20</div>
+                                    <div class=''>21</div>
+                                    <div class=''>22</div>
+                                    <div class=''>23</div>
+                                    <div class=''>24</div>
+                                    <div class=''>25</div>
+                                    <div class=''>26</div>
+                                    <div class=''>27</div>
+                                    <div class=''>28</div>
+                                    <div class=''>29</div>
+                                    <div class=''>30</div>
+                                    <div class=''>31</div>
+                                </div>
+                            </div>
+
+                            <p><b>▶ Địa chỉ:</b> Sân trường THPT Nguyễn Trãi</p>
+                            <a href="https://www.google.com/maps?q=Highlands+Coffee+Vincom+Thai+Binh,+460+L%C3%BD+B%C3%B4n,+P.+%C4%90%E1%BB%81+Th%C3%A1m,+Th%C3%A1i+B%C3%ACnh,+06000&ftid=0x3135e5d429e098d3:0x7cde51f3f67609b6&entry=gps&lucs=,94275411,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjQ1LjEuODI3NTI0MzAwMBgAINeCAypsLDk0Mjc1NDExLDk0MjI0ODI1LDk0MjI3MjQ3LDk0MjI3MjQ4LDk0MjMxMTg4LDk0MjgwNTY4LDQ3MDcxNzA0LDQ3MDY5NTA4LDk0MjE4NjQxLDk0MjgyMTM0LDk0MjAzMDE5LDQ3MDg0MzA0QgJWTg%3D%3D&skid=68a85427-9e27-4c07-903c-d031400f6fc8&g_st=ipc"
+                                target="_blank" class="invite-button" rel="noopener">XEM CHỈ ĐƯỜNG</a>
+                        </div>
+
+                        <div class="mt-2">
+                            <div class="contact-info mt-3">
+                                <p><b>Hotline:</b> <a href="tel:0342240508">0342240508</a></p>
+
+                                <p><b>Facebook:</b>
+                                    <a href="https://www.facebook.com/share/16syjLmXSq/?mibextid=wwXIfr" target="_blank"
+                                        rel="noopener">Chugg Ngoc Anhh</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3 class="section-script mt-40 invite-title">Một số ảnh về</h3>
+                        <h2 class="section-sub">Quá trình học tập</h2>
+
+                        <div class="gallery">
+                            <div class="gallery-main">
+                                <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_184538_e6c4b0e2.jpg"
+                                    alt="" loading="lazy">
+                            </div>
+                            <div class="gallery-row">
+                                <div class="gallery-side-large">
+                                    <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183936_26c6f9f8.jpg"
+                                        alt="" loading="lazy">
+                                </div>
+                                <div class="gallery-col">
+                                    <div class="gallery-thumb">
+                                        <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183936_7aed52b4.jpg"
+                                            alt="" loading="lazy">
+                                    </div>
+                                    <div class="gallery-thumb">
+                                        <img src="https://thiep.kyyeutnt.vn/uploads/avatars/u239_20251109_183936_f8484ff7.jpg"
+                                            alt="" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="section-script mt-40 invite-title">Xác nhận tham dự</h3>
+                        <h2 class="section-sub">&amp; lời chúc</h2>
+
+                        <form id="rsvp-form" class="invite-form" accept-charset="UTF-8">
+                            <input type="hidden" name="csrf" value="">
+                            <input type="hidden" name="invite_id" value="254">
+                            <input type="text" name="name" placeholder="Tên của bạn là gì?" required>
+                            <input type="text" name="relation" placeholder="Nhập lời chúc của bạn">
+
+                            <select name="join" id="join" required aria-label="Bạn có tham dự không?">
+                                <option value="">-- Bạn có tham dự không? --</option>
+                                <option value="yes">Có</option>
+                                <option value="no">Không</option>
+                                <option value="maybe">Có thể</option>
+                            </select>
+                            <button type="submit">GỬI NGAY!</button>
+                            <div class="mt-3 text-start">
+                                <div class="msg-head">Xem trước lời chúc của bạn</div>
+                                <textarea name="message" rows="4" class="msg-body"
+                                    placeholder="Lời chúc của bạn sẽ hiển thị ở đây" readonly></textarea>
+                            </div>
+                            <div id="rsvp-alert" class="mt-2" style="display:none"></div>
+                        </form>
+
+                        <div class="center mt-30">
+                            <img src="/uploads/icon/thank-you.png" alt="" width="230" loading="lazy"><br /><br />
+                            <div class="invite-footer-pro">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
     <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              const relationInput = document.querySelector('input[name="relation"]');
-              const messagePreview = document.querySelector('textarea[name="message"]');
-            
-              if (relationInput && messagePreview) {
-                relationInput.addEventListener('input', function() {
-                  messagePreview.value = relationInput.value;
+        document.addEventListener('DOMContentLoaded', function () {
+            const relationInput = document.querySelector('input[name="relation"]');
+            const messagePreview = document.querySelector('textarea[name="message"]');
+
+            if (relationInput && messagePreview) {
+                relationInput.addEventListener('input', function () {
+                    messagePreview.value = relationInput.value;
                 });
-              }
-            });
-            document.getElementById('rsvp-form').addEventListener('submit', function(e){
-    e.preventDefault();
+            }
+        });
+        document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    let formData = new FormData(this);
-    formData.append('action', 'guest-send-message');
+            let formData = new FormData(this);
+            formData.append('action', 'guest-send-message');
 
-    fetch('https://thiep.kyyeutnt.vn/ajaxs/client/invite.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-        let alertBox = document.getElementById('rsvp-alert');
-        alertBox.style.display = 'block';
-        alertBox.innerHTML = data.msg;
-        alertBox.className = data.status === 'success'
-            ? 'alert alert-success'
-            : 'alert alert-danger';
+            fetch('https://thiep.kyyeutnt.vn/ajaxs/client/invite.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    let alertBox = document.getElementById('rsvp-alert');
+                    alertBox.style.display = 'block';
+                    alertBox.innerHTML = data.msg;
+                    alertBox.className = data.status === 'success'
+                        ? 'alert alert-success'
+                        : 'alert alert-danger';
 
-        if(data.status === 'success') {
-            this.reset();
-        }
-    });
-});
-            </script>
-<script>
-window.addEventListener("load", function() {
-    const doors = document.querySelector(".door-wrap");
-    setTimeout(() => {
-        doors.classList.add("open");
-        setTimeout(() => {
-            doors.style.display = "none";
-        }, 2800);
-    }, 500);
-});
-</script>
+                    if (data.status === 'success') {
+                        this.reset();
+                    }
+                });
+        });
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const doors = document.querySelector(".door-wrap");
+            setTimeout(() => {
+                doors.classList.add("open");
+                setTimeout(() => {
+                    doors.style.display = "none";
+                }, 2800);
+            }, 500);
+        });
+    </script>
