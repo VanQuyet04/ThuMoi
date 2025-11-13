@@ -1,0 +1,5 @@
+node_modules/
+messages.db
+messages.db-journal
+*.log
+

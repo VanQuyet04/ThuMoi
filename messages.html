@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lời chúc sinh nhật - Nguyễn Trần Ngọc Anh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <style>
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+            font-family: var(--ff-sans);
+        }
+
+        .messages-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .messages-header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding: 24px 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .messages-header h1 {
+            font-family: var(--ff-script);
+            font-size: 42px;
+            color: #e58424;
+            margin: 0;
+        }
+
+        .messages-header p {
+            color: var(--text-sub);
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--bg-accent);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid var(--bg-accent);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--bg-accent);
+            color: var(--text-invert);
+        }
+
+        .message-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .message-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-soft);
+            position: relative;
+        }
+
+        .message-name {
+            font-family: var(--ff-title);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .message-header-right {
+            position: absolute;
+            right: 0;
+        }
+
+        .message-date {
+            font-size: 12px;
+            color: var(--text-sub);
+            display: block;
+            margin-top: 6px;
+        }
+
+        .message-status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .status-yes {
+            background: #4caf50;
+            color: white;
+        }
+
+        .status-no {
+            background: #f44336;
+            color: white;
+        }
+
+        .status-maybe {
+            background: #ff9800;
+            color: white;
+        }
+
+        .message-content {
+            color: var(--text-main);
+            line-height: 1.5;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .message-content.empty {
+            color: var(--text-sub);
+            font-style: italic;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-sub);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-sub);
+        }
+
+        .empty-state img {
+            width: 150px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .messages-header h1 {
+                font-size: 36px;
+            }
+
+            .message-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .message-date {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="messages-container">
+        <a href="index.html" class="back-link">← Quay lại thiệp mời</a>
+
+        <div class="messages-header">
+            <h1>Lời chúc sinh nhật</h1>
+            <p>Cảm ơn tất cả những lời chúc tốt đẹp từ mọi người ❤️</p>
+        </div>
+
+        <div id="messages-list">
+            <div class="loading">Đang tải lời chúc...</div>
+        </div>
+    </div>
+
+    <script>
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            return `${day}/${month}/${year} lúc ${hours}:${minutes.toString().padStart(2, '0')}`;
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'yes': 'Có tham dự',
+                'no': 'Không tham dự',
+                'maybe': 'Có thể tham dự'
+            };
+            return statusMap[status] || status;
+        }
+
+        function getStatusClass(status) {
+            return `status-${status}`;
+        }
+
+        function loadMessages() {
+            // Tự động phát hiện API URL
+            const apiUrl = window.location.port === '5500' || window.location.port === '' 
+                ? 'http://localhost:3000/api/messages' 
+                : '/api/messages';
+            
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    const messagesList = document.getElementById('messages-list');
+                    
+                    if (data.status === 'error') {
+                        messagesList.innerHTML = `<div class="empty-state">${data.msg}</div>`;
+                        return;
+                    }
+
+                    if (!data.data || data.data.length === 0) {
+                        messagesList.innerHTML = `
+                            <div class="empty-state">
+                                <p>Chưa có lời chúc nào. Hãy là người đầu tiên gửi lời chúc nhé! 💝</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    messagesList.innerHTML = data.data.map(msg => `
+                        <div class="message-card">
+                            <div class="message-header">
+                                <h3 class="message-name">${escapeHtml(msg.name)}</h3>
+                                <div class="message-header-right">
+                                    <span class="message-status ${getStatusClass(msg.join_status)}">
+                                        ${getStatusText(msg.join_status)}
+                                    </span>
+                                </div>
+                                <span class="message-date">${formatDate(msg.created_at)}</span>
+                            </div>
+                            ${msg.message ? `
+                                <div class="message-content">${escapeHtml(msg.message)}</div>
+                            ` : `
+                                <div class="message-content empty">(Không có lời chúc)</div>
+                            `}
+                        </div>
+                    `).join('');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('messages-list').innerHTML = `
+                        <div class="empty-state">
+                            <p>Có lỗi xảy ra khi tải lời chúc. Vui lòng thử lại sau!</p>
+                        </div>
+                    `;
+                });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Tải lời chúc khi trang load
+        document.addEventListener('DOMContentLoaded', loadMessages);
+    </script>
+</body>
+
+</html>
+

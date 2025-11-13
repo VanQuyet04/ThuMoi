@@ -1,0 +1,19 @@
+{
+  "name": "thiep-moi-sinh-nhat",
+  "version": "1.0.0",
+  "description": "Thiệp mời sinh nhật với hệ thống lưu lời chúc",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["invitation", "birthday"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2"
+  }
+}
+
