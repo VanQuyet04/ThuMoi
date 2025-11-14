@@ -308,7 +308,7 @@
 
             // Tự động phát hiện API URL
             const apiUrl = window.location.port === '5500' || window.location.port === '' 
-                ? 'http://localhost:3000/api/messages' 
+                ? 'https://myletter.onrender.com/api/messages' 
                 : '/api/messages';
 
             fetch(apiUrl, {
