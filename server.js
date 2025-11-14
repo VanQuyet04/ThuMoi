@@ -109,7 +109,7 @@ app.get('/messages', (req, res) => {
 
 // Khởi động server
 app.listen(PORT, () => {
-    console.log(`Server đang chạy tại http://localhost:${PORT}`);
+    console.log(`Server đang chạy`);
 });
 
 // Đóng database khi tắt server
